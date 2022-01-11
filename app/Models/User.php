@@ -41,4 +41,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function magasin (){
+        return $this->hasOne(Magasin::class);
+    }
+    public function commandes (){
+        return $this->hasMany(Magasin::class);
+    }
+    public function panier(){
+        return $this->hasOne(Panier::class);
+    }
 }
